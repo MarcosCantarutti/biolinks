@@ -7,7 +7,7 @@
 
     @endif
 
-    <form action="/login" method="POST">
+    <form action="{{route('login')}}"  method="POST">
         {{-- token --}}
         @csrf
         <div>
