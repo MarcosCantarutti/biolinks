@@ -40,11 +40,12 @@ class RegisterRequest extends FormRequest
     {
         // criar um usuario
 
-        $user = new User();
-        $user->name = $this->name;
-        $user->password = $this->password;
-        $user->email = $this->email;
-        $user->save();
+        // $user = new User();
+        // $user->name = $this->name;
+        // $user->password = $this->password;
+        // $user->email = $this->email;
+        // $user->save();
+        $user = User::query()->create($this->validated());
 
         // logar com esse usuario
 
