@@ -13,7 +13,7 @@ class DashboardController extends Controller
         /** @var User $user */
         $user = auth()->user('links');
 
-        // dd($user->links);
+        dump($user->links);
         return view('dashboard');
     }
 }
