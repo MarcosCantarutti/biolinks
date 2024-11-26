@@ -34,4 +34,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // um usuario possui n links
+    public function links()
+    {
+        return $this->hasMany(Link::class);
+    }
 }
