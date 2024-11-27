@@ -11,9 +11,9 @@ class DashboardController extends Controller
     {
 
         /** @var User $user */
-        $user = auth()->user('links');
+        $user = auth()->user();
 
         dump($user->links);
-        return view('dashboard');
+        return view('dashboard', ['links' =>  $user->links]);
     }
 }
