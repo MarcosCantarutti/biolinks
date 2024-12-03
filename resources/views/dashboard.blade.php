@@ -1,11 +1,12 @@
 <div>
    <h1>Dashboard</h1>
    <h2>User {{auth()->user()->name}} :: {{ auth()->id() }}</h2>
-   @if ($message = session()->get('message'))
+   <a href="{{route('profile')}}">Atualizar Profile</a>
+    @if ($message = session()->get('message'))
 
-    <div>{{$message}}</div>
+        <div>{{$message}}</div>
 
-  @endif
+    @endif
   <a href="{{route('links.create')}}">  Criar um novo Link</a>
    <ul>
     @foreach ( $links as $link)
