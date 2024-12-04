@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\CheckHandler;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -25,8 +26,9 @@ class ProfileRequest extends FormRequest
         return [
             'name' => ['required', 'min:3', 'max:30'],
             'description' => ['nullable'],
-            Rule::unique('users')->ignoreModel($this->user()),
-            // 'handler' => ['required', 'unique:users,handler,' . $this->user()->id],
+            // Rule::unique('users')->ignoreModel($this->user()),
+            'handler' => ['required', 'unique:users,handler,' . $this->user()->id,  new CheckHandler],
+
         ];
     }
 }

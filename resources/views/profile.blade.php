@@ -33,7 +33,7 @@
         </div>
         <br>
         <div>
-            <span>biolinks.com.br/@</span>
+            <span>biolinks.com.br/</span>
             <input type="text" name="handler" placeholder="@seulink"
             value="{{ old('handler', $user->handler) }}">
 
