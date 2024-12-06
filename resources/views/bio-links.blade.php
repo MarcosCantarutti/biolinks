@@ -1,3 +1,4 @@
+<x-layout.app>
 <div>
 
     <img src="/storage/{{$user->photo}}" alt="">
@@ -16,3 +17,4 @@
      @endforeach
     </ul>
  </div>
+</x-layout.app>

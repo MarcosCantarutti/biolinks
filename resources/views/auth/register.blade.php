@@ -1,4 +1,5 @@
-<div>
+<x-layout.app>
+    <div>
     <h1>Register</h1>
 
     @if ($message = session()->get('message'))
@@ -45,3 +46,4 @@
         <button>Registrar</button>
     </form>
 </div>
+</x-layout.app>

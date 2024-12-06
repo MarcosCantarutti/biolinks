@@ -1,3 +1,4 @@
+<x-layout.app>
 <div>
    <h1>Dashboard</h1>
    <h2>User {{auth()->user()->name}} :: {{ auth()->id() }}</h2>
@@ -45,3 +46,4 @@
     @endforeach
    </ul>
 </div>
+</x-layout.app>

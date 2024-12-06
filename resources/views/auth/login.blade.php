@@ -1,32 +1,59 @@
-<div>
-    <h1>Login</h1>
+<x-layout.app>
+    
+    <x-container>
+        <x-card title="Login">
+            <x-form :route="route('login')" post>
 
-    @if ($message = session()->get('message'))
+                <x-input   name="email" placeholder="Email"
+                value="{{ old('email') }}"/>
 
-        <div>{{$message}}</div>
+                <x-input type="password" name="password" placeholder="Senha"/>
+            </x-form>
 
-    @endif
+            <x-slot:actions>
+                <x-button form="login-form">Logar</x-button>
+            </x-slot:actions>
+        </x-card>
 
-    <form action="{{route('login')}}"  method="POST">
-        {{-- token --}}
-        @csrf
-        <div>
-            <input type="email" name="email" placeholder="Email"
-            value="{{ old('email') }}">
+    </x-container>
+   <div class="mx-auto max-w-screen-md flex items-center justify-center py-20">
+    <div class="card bg-base-100 w-96 shadow-xl">
+        <div class="card-body">
+            <h1 class="card-title">Login</h1>
+
+            @if ($message = session()->get('message'))
+
+                <div>{{$message}}</div>
+
+            @endif
+
+            <form action="{{route('login')}}"  method="POST" id="loginForm">
+                {{-- token --}}
+                @csrf
+                <div>
+                    <input class="input input-bordered" type="email" name="email" placeholder="Email"
+                    value="{{ old('email') }}">
 
 
-            @error('email')
-                <span>{{ $message }}</span>
-            @enderror
-        </div>
-        <div>
-            <input type="password" name="password" placeholder="Senha">
+                    @error('email')
+                        <div class="text-sm text-error">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div>
+                    <input class="input input-bordered" type="password" name="password" placeholder="Senha">
 
-            @error('password')
-                <span>{{ $message }}</span>
-            @enderror
-        </div>
-<br>
-        <button>Logar</button>
+                    @error('password')
+                    <div class="text-sm text-error">{{ $message }}</div>
+                    @enderror
+                </div>
+        <br>
     </form>
-</div>
+    <div class="card-actions">
+        <button class="btn btn-primary" type="submit" form="loginForm">Logar</button>
+    </div>
+        </div>
+        </div>
+   </div>
+
+
+</x-layout.app>
