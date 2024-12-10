@@ -14,6 +14,6 @@ class DashboardController extends Controller
         $user = auth()->user();
 
         // dump($user->links);
-        return view('dashboard', ['links' =>  $user->links()->orderBy('sort')->get()]);
+        return view('dashboard', ['user' => $user, 'links' =>  $user->links()->orderBy('sort')->get()]);
     }
 }
