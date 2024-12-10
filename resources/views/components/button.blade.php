@@ -1,6 +1,6 @@
 @props([
 'href'=> null,
-'block' => null,
+'wide' => null,
 'outline' => null,
 'info' => null
 ])
@@ -11,7 +11,7 @@ $tag = $href ? 'a' : 'button';
 
 <{{$tag}} {{$href ? "href=$href" : '' }} {{$attributes->class([
     'btn btn-primary',
-    'btn-block' => $block,
+    'btn-wide' => $wide,
     'btn-outline'=> $outline,
     'btn-info' => $info
     ])}}>
