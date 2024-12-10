@@ -7,6 +7,8 @@
                 <x-input type="password" name="password" placeholder="Senha" />
             </x-form>
 
+
+            <x-a :href="route('register')">I need to create a new account</x-a>
             <x-slot:actions>
                 <x-button type='submit' form="login-form">Logar</x-button>
             </x-slot:actions>
